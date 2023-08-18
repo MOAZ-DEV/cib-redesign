@@ -415,7 +415,8 @@
     background: $fadeAccentOrange;
     border-top: inset 2px $fadeAccentOrange;
     border-bottom: inset 2px $fadeAccentOrange;
-
+ 
+    
     .Wraper {
       @include DFR;
       @include sc(900px) {
