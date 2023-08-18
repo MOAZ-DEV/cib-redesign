@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,900;1,100;1,200;1,400;1,700;1,800;1,900&display=swap');
+/*text style*/
+/*text style*/ 
+@mixin h1 {
+    font-size: 64px;
+    font-family: Montserrat;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  @mixin h2 {
+    font-size: 48px;
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
+  @mixin h3 {
+    font-size: 32px;
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
+  @mixin h4 {
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
+  @mixin h5 {
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
+  @mixin h6 {
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
+  @mixin b1 {
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 400;
+    letter-spacing: 0px;
+  }
+  @mixin b2 {
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 400;
+    letter-spacing: 0px;
+  }
+  @mixin b3 {
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 400;
+    letter-spacing: 0px;
+  }
+  @mixin b4 {
+    font-size: 14px;
+    font-family: Montserrat;
+    font-weight: 400;
+    letter-spacing: 0px;
+  }
+  @mixin b5 {
+    font-size: 12px;
+    font-family: Montserrat;
+    font-weight: 400;
+    letter-spacing: 0px;
+  }
+  
+  
+/*paint style*/ 
+
+$accentblue: rgba(0, 99, 221, 1);
+$brightaccentblue: hsl(207, 100%, 75%);
+$accentorange: rgb(255, 138, 35);
+$fadeAccentBlue: rgba(123, 182, 255, 0.286);
+
+$bgfadeaccentblue: rgba(207, 228, 255, 0.44);
+$fadeAccentOrange: rgba(251, 204, 165, 0.186);
+$darkaccentblue: rgba(0, 24, 54, 1);
+$slightlydarkaccentblue: rgba(21, 63, 143, 1);
+$bright: rgba(255, 255, 255, 1);
+$fadebright: rgba(255, 255, 255, 0.074);
+$seemlessdark: rgba(0, 0, 0, 1);
+$fadedark: rgba(0, 0, 0, 0.155);
+

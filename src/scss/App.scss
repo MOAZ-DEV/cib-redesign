@@ -1,0 +1,1122 @@
+@import "./Variables.scss", "./Autos.scss";
+* {
+  height: fit-content;
+  width: fit-content;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  text-decoration: none;
+  text-decoration-color: none;
+  list-style: none;
+
+  outline: 0;
+  border: 0;
+
+  background: unset;
+  color: $bright;
+}
+#root {
+}
+.App {
+  @include DFC;
+  justify-content: start;
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden scroll;
+  background: $bright;
+
+  .BetaNav {
+    @include DFR;
+    @include MCP;
+    @include sc(800px) {
+      display: none;
+    }
+    gap: 75px;
+    justify-content: center;
+
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+
+    background: $darkaccentblue;
+
+    span {
+      @include DFR;
+      @include b5;
+      gap: 15px;
+      color: $brightaccentblue;
+      cursor: pointer;
+    }
+  }
+  .Nav {
+    @include DFR;
+    @include MCP;
+    justify-content: space-between;
+
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+
+    min-height: 45px !important;
+
+    background: $accentblue;
+
+    .CibLogo {
+      @include DFR;
+      height: auto;
+    }
+    .Menu {
+      @include DFR;
+      @include sc(1100px) {
+        display: none;
+      }
+      li {
+        @include DFR;
+        @include b5;
+        padding: 12.5px;
+        height: 100%;
+        transition: box-shadow 0.5s;
+        cursor: pointer;
+        &:hover {
+          box-shadow: inset 0 100px 50px #ffffff20;
+        }
+      }
+    }
+    .BtnsWrap {
+      @include DFR;
+      height: 100%;
+      width: fit-content;
+
+      button {
+        @include DFR;
+        gap: 25px;
+        justify-content: center;
+        height: 100%;
+        transition: box-shadow 0.5s;
+        cursor: pointer;
+      }
+      .SearchBtn {
+        width: fit-content;
+        background: $fadeAccentBlue;
+        padding: 0 27.5px;
+        &:hover {
+          box-shadow: inset 0 100px 50px #ffffff20;
+        }
+      }
+      .LoginBtn {
+        @include sc(475px) {
+          display: none;
+        }
+        min-width: max-content;
+        color: $accentblue;
+        background: $bright;
+        padding: 0 27.5px;
+        &:hover {
+          box-shadow: inset 0 100px 50px #00000005;
+        }
+      }
+      .MenuBtn {
+        @include rsc(1100px) {
+          display: none;
+        }
+        width: fit-content;
+        padding: 0 27.5px;
+        &:hover {
+          box-shadow: inset 0 100px 50px #ffffff20;
+        }
+        &:active {
+          .MenuImg {
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+  .SideMenu {
+    @include DFC;
+    @include MCP;
+    width: 100%;
+
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+
+    justify-content: space-between;
+    height: calc(100vh - 45px);
+
+    z-index: 1;
+    position: fixed;
+    top: 45px;
+    left: 0;
+
+    background: $seemlessdark;
+    opacity: 1;
+
+    animation: SideMenu 0.5s ease;
+    transition: opacity 0.5s;
+
+    .BetaMenu {
+      @include DFC;
+      @include MCP;
+
+      span {
+        @include DFR;
+        @include b5;
+        gap: 15px;
+
+        height: 25px;
+
+        color: $brightaccentblue;
+        cursor: pointer;
+      }
+      transition: 0.5s;
+      transition-delay: 300ms;
+    }
+    .Menu {
+      @include DFC;
+      @include MCP;
+      @include b5;
+
+      li {
+        padding: 12px 0;
+        width: 100%;
+        border-bottom: solid 2px $fadebright;
+      }
+    }
+    @keyframes SideMenu {
+      from {
+        max-height: 0;
+      }
+      to {
+        max-height: calc(100vh - 45px);
+      }
+    }
+  }
+  .HeroSection {
+    @include MCP;
+    @include DFC;
+    align-items: center;
+    position: relative;
+
+    .HeroImg {
+      min-height: 75vh;
+      width: 100vw;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .InsetWrap {
+      @include MCP;
+      @include DFC;
+      gap: 45px;
+
+      padding-bottom: 45px !important;
+      padding-top: 125px !important;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+
+      color: $bright;
+
+      .TextWrap {
+        @include DFC;
+        @include sc(975px) {
+          br {
+            display: none;
+          }
+        }
+        gap: 15px;
+
+        .Subtitle {
+          @include b5;
+        }
+        .Header01 {
+          @include h2;
+          @include sc(975px) {
+            @include h3;
+          }
+        }
+      }
+      .BlocksWrap {
+        @include DFR;
+        gap: 15px;
+
+        .Item {
+          @include DFC;
+          @include sc(975px) {
+            width: 300px;
+          }
+          gap: 15px;
+          padding: 25px;
+          width: clamp(275px, calc(100%), 100vw);
+
+          background: $fadedark;
+          backdrop-filter: blur(15px);
+          border-radius: 15px;
+          border: solid 2px $fadebright;
+
+          .Title {
+            @include h6;
+          }
+          .Content {
+            @include b5;
+          }
+        }
+      }
+    }
+  }
+  .SectionsNavMenu {
+    @include MCP;
+    @include DFC;
+    @include sc (975px) {
+      display: none;
+    }
+
+    top: 25px;
+    position: sticky;
+
+    align-items: center;
+
+    padding-top: 45px !important;
+    padding-bottom: 75px !important;
+
+    .Wraper {
+      @include DFR;
+      gap: 25px;
+      padding: 12px 25px;
+
+      background: $seemlessdark;
+      -webkit-backdrop-filter: blur(35px);
+      border-radius: 15px;
+
+      li {
+        @include b5;
+        cursor: pointer;
+        text-align: center;
+      }
+    }
+  }
+  .AoSection {
+    @include MCP;
+    @include DFC;
+    
+    align-items: center;
+
+    padding-top: 45px !important;
+    padding-bottom: 125px !important;
+
+    .Wraper {
+      @include DFC;
+      align-items: center;
+      gap: 45px;
+
+      .TextWrap {
+        @include DFC;
+        @include sc(975px) {
+          br {
+            display: none;
+          }
+        }
+        align-items: center;
+        gap: 15px;
+
+        span {
+          color: $seemlessdark;
+        }
+
+        .SubTitle {
+          @include b5;
+        }
+        .Title {
+          @include h2;
+          @include sc(975px) {
+            @include h3;
+          }
+          text-align: center;
+        }
+      }
+      .CtaBtns {
+        @include DFR;
+        @include sc (975px) {
+          @include DFC;
+        }
+        align-items: center;
+        gap: 3px;
+
+        button {
+          @include b2;
+          @include DFR;
+          @include sc (975px) {
+            border-radius: 45px;
+          }
+
+          align-items: center;
+          padding: 12px 25px;
+          gap: 15px;
+
+          height: 55px;
+
+          &:first-child {
+            @include sc (975px) {
+              border-radius: 45px;
+            }
+  
+            color: $accentblue;
+            background: $fadeAccentBlue;
+            border: inset 2px $fadeAccentBlue;
+
+            border-radius: 45px 0px 0px 45px;
+
+            transition: box-shadow 0.5s linear, color 0.5s;
+            &:hover {
+              box-shadow: inset 0 0 100px $bright !important;
+            }
+          }
+          &:last-child {
+            @include sc (975px) {
+              border-radius: 45px;
+            }
+  
+            color: $accentorange;
+            background: $fadeAccentOrange;
+            border: inset 2px $fadeAccentOrange;
+
+            border-radius: 0px 45px 45px 0px;
+
+            transition: box-shadow 0.5s linear, color 0.5s;
+            &:hover {
+              box-shadow: inset 0 0 100px $bright !important;
+            }
+          }
+          img {
+            filter: hue-rotate(0.5);
+          }
+        }
+      }
+    }
+  }
+  .LcSection {
+    @include DFC;
+    @include MCP;
+    align-items: left;
+    gap: 75px;
+
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+
+    background: $fadeAccentOrange;
+    border-top: inset 2px $fadeAccentOrange;
+    border-bottom: inset 2px $fadeAccentOrange;
+
+    .Wraper {
+      @include DFR;
+      @include sc(900px) {
+        @include DFC;
+        max-width: -webkit-fill-available;
+        align-items: start;
+        gap: 45px;
+      }
+      align-items: center;
+      gap: 95px;
+
+      .SideWrap {
+        @include DFC;
+        @include sc(975px) {
+          min-width: unset;
+          gap: 25px;
+        }
+        justify-content: center;
+        gap: 45px;
+
+        min-width: max-content;
+
+        .TextWrap {
+          @include DFC;
+          @include sc(975px) {
+            br {
+              display: none;
+            }
+          }
+          align-items: left;
+          gap: 15px;
+
+          span {
+            color: $seemlessdark;
+          }
+
+          .Subtitle {
+            @include b5;
+          }
+          .Title {
+            @include h2;
+            @include sc(975px) {
+              @include h3;
+            }
+            text-align: left;
+          }
+        }
+        .CtaBtn {
+          button {
+            @include b2;
+            @include DFR;
+            align-items: center;
+            padding: 7px 25px;
+            gap: 15px;
+
+            color: $accentorange;
+            border-radius: 45px 0px 0px 45px;
+            border: solid 0.5px $accentorange;
+            border-radius: 45px;
+
+            transition: box-shadow 0.5s linear, color 0.5s;
+            &:hover {
+              box-shadow: inset 0 0 100px $accentorange !important;
+              color: $bright;
+            }
+          }
+        }
+      }
+      .BlocksWrap {
+        @include DFR;
+        @include sc(900px) {
+          @include DFC;
+          width: -webkit-fill-available;
+        }
+        align-items: flex-start;
+        gap: 15px;
+
+        width: auto;
+
+        .Item {
+          @include DFC;
+          @include sc(900px) {
+            width: -webkit-fill-available;
+            .ImgWrap, .ImgWrap img {
+              width: -webkit-fill-available;
+            }
+          }
+          align-items: flex-start;
+          gap: 15px;
+
+          width: 375px;
+
+          .ImgWrap {
+            width: 375px;
+            @include sc(900px) {
+                width: -webkit-fill-available;
+              
+            }
+            img {
+              @include sc(900px) {
+                width: -webkit-fill-available;
+              
+            }
+              height: fit-content;
+              width: 375px;
+              object-fit: cover;
+            }
+          }
+
+          .TextWrap {
+            @include DFC;
+            @include sc(975px) {
+              br {
+                display: none;
+              }
+            }
+            gap: 15px;
+
+            .content {
+              @include b4;
+
+              color: $seemlessdark;
+            }
+            .title {
+              @include h4;
+              @include sc(975px) {
+              }
+
+              color: $seemlessdark;
+            }
+          }
+          .ItemCta {
+            @include h6;
+           color: $seemlessdark;
+            border-bottom: solid 2px;
+          }
+        }
+      }
+    }
+    .SectionSlideBtns {
+      @include DFR;
+      @include sc(900px) {
+        display: none;
+      
+    }
+      justify-content: right;
+      gap: 15px;
+
+      width: auto;
+
+      button {
+        img {
+          cursor: pointer;
+        }
+        &:first-child {
+          opacity: 0.45;
+        }
+      }
+    }
+  }
+  .NeSection {
+    @include DFC;
+    @include MCP;
+    align-items: right;
+    gap: 45px;
+
+    padding-top: 125px !important;
+    padding-bottom: 45px !important;
+
+    .Wraper {
+      @include DFC;
+      align-items: center;
+      gap: 45px;
+
+      width: auto;
+
+      .LableWrap {
+        @include DFR;
+        justify-content: space-between;
+
+        width: 100%;
+
+        .Header {
+          @include h3;
+
+          color: $seemlessdark;
+        }
+        .CtaBtn {
+          button {
+            @include b2;
+            @include DFR;
+            align-items: center;
+            padding: 7px 25px;
+            gap: 15px;
+
+            color: $accentblue;
+            background: $fadeAccentBlue;
+            border-radius: 45px 0px 0px 45px;
+            border: solid 0.5px $accentblue;
+            border-radius: 45px;
+
+            transition: box-shadow 0.5s linear, color 0.5s;
+            &:hover {
+              box-shadow: inset 0 0 100px $accentblue !important;
+              color: $bright;
+            }
+          }
+        }
+      }
+      .BlocksWrap {
+        @include DFR;
+        @include sc(400px) {
+          @include DFC;
+        }
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 15px;
+
+        width: -webkit-fill-available;
+
+        .Item {
+          @include DFC;
+          @include sc(400px) {
+            width: -webkit-fill-available;
+            min-width: unset;
+            padding: 25px;
+          }
+          justify-content: left;
+          gap: 15px;
+
+          padding: 45px;
+
+          min-width: 475px;
+
+          background: $bgfadeaccentblue;
+
+          gap: 15px;
+
+          span {
+            @include sc(975px) {
+              br {
+                display: none;
+              }
+            }
+          }
+          .dateLable {
+          }
+          .content,
+          .dateLable {
+            @include b4;
+
+            color: $seemlessdark;
+          }
+          .title {
+            @include h4;
+            
+
+            color: $seemlessdark;
+          }
+        }
+      }
+    }
+    .SectionSlideBtns {
+      @include DFR;
+      @include sc(400px) {
+        display: none;
+      }
+      justify-content: left;
+      gap: 15px;
+
+      width: auto;
+
+      button {
+        img {
+          cursor: pointer;
+        }
+        &:last-child {
+          opacity: 0.45;
+        }
+      }
+    }
+  }
+  .SfSection {
+    @include MCP;
+    @include DFC;
+    align-items: center;
+
+    padding-top: 45px !important;
+    padding-bottom: 125px !important;
+
+    .Wraper {
+      @include DFC;
+      @include sc(975px) {
+        width: -webkit-fill-available;
+      }
+      align-items: center;
+      gap: 45px;
+
+      .TextWrap {
+        @include DFC;
+        @include sc(975px) {
+          br {
+            display: none;
+          }
+        }
+        align-items: center;
+        gap: 15px;
+
+        span {
+          color: $seemlessdark;
+        }
+
+        .SubTitle {
+          @include b5;
+        }
+        .Title {
+          @include h2;
+          @include sc(975px) {
+            @include h3;
+          }
+          text-align: center;
+        }
+      }
+      .ImgsWraper {
+        @include DFR;
+        @include sc(975px) {
+          @include DFC;
+          width: -webkit-fill-available;
+        }
+        gap: 15px;
+
+        .ImgWrap {
+        }
+      }
+      .CtaBtn {
+        align-items: center;
+
+        button {
+          @include b2;
+          @include DFR;
+          align-items: center;
+          padding: 7px 25px;
+          gap: 15px;
+
+          color: $accentblue;
+          background: $fadeAccentBlue;
+          border: solid 1px $accentblue;
+
+          border-radius: 45px;
+          transition: box-shadow 0.5s linear, color 0.5s;
+          &:hover {
+            box-shadow: inset 0 0 100px $accentblue !important;
+            color: $bright;
+          }
+        }
+      }
+    }
+  }
+  .AwSection {
+    @include MCP;
+    @include DFC;
+    align-items: center;
+
+    padding-top: 45px !important;
+    padding-bottom: 125px !important;
+
+    .Wraper {
+      @include DFC;
+      align-items: center;
+      gap: 45px;
+
+      .TextWrap {
+        @include DFC;
+        @include sc(975px) {
+          br {
+            display: none;
+          }
+        }
+        align-items: center;
+        gap: 15px;
+
+        span {
+          color: $seemlessdark;
+        }
+
+        .SubTitle {
+          @include b5;
+        }
+        .Title {
+          @include h2;
+          @include sc(975px) {
+            @include h3;
+          }
+          text-align: center;
+        }
+      }
+      .ItemsWraper {
+        @include DFR;
+        @include sc(975px) {
+          align-items: center;
+          @include DFC;
+        }
+        align-items: flex-start;
+        gap: 45px;
+
+        .ItemWrap {
+          @include DFC;
+
+          align-items: center;
+          gap: 15px;
+
+          span {
+            color: $seemlessdark;
+          }
+
+          .content {
+            @include b3;
+          }
+          .title {
+            @include h5;
+            text-align: center;
+          }
+        }
+      }
+      .CtaBtn {
+        align-items: center;
+
+        button {
+          @include b2;
+          @include DFR;
+          align-items: center;
+          padding: 7px 25px;
+          gap: 15px;
+
+          cursor: pointer;
+
+          color: $accentblue;
+          background: $fadeAccentBlue;
+          border: solid 1px $accentblue;
+
+          border-radius: 45px;
+
+          transition: box-shadow 0.5s linear, color 0.5s;
+          &:hover {
+            box-shadow: inset 0 0 100px $accentblue !important;
+            color: $bright;
+          }
+        }
+      }
+    }
+  }
+  .LmCtaSection {
+    @include MCP;
+    @include DFC;
+    align-items: center;
+    gap: 45px;
+
+    padding-top: 45px !important;
+    padding-bottom: 125px !important;
+
+    .CtaWrap {
+      @include DFC;
+      @include sc(975px) {
+        border-radius: 150px;
+        gap: 25px;
+        padding: 45px 35px;
+        br {
+          display: none;
+        }
+      }
+      align-items: center;
+      gap: 45px;
+
+      padding: 45px 125px;
+
+      background: $accentblue;
+      border-radius: 350px;
+
+      .TextWrap {
+        @include DFC;
+        @include sc(975px) {
+          br {
+            display: none;
+          }
+        }
+        align-items: center;
+        gap: 15px;
+
+        span {
+          color: $bright;
+        }
+
+        .Sub {
+          @include b5;
+        }
+        .Header {
+          @include h2;
+          @include sc(975px) {
+            @include h4;
+          }
+          text-align: center;
+        }
+      }
+      .CtaBtn {
+        align-items: center;
+
+        button {
+          @include b2;
+          @include DFR;
+          align-items: center;
+          padding: 12px 25px;
+          gap: 15px;
+
+          cursor: pointer;
+
+          color: $bright;
+          border: solid 1px $bright;
+
+          border-radius: 45px;
+
+          transition: box-shadow 0.5s linear, color 0.5s;
+          &:hover {
+            box-shadow: inset 0 0 100px $bright !important;
+            color: $accentblue;
+          }
+        }
+      }
+    }
+  }
+  .WcSection {
+    @include MCP;
+    @include DFC;
+    align-items: center;
+
+    padding-top: 45px !important;
+    padding-bottom: 125px !important;
+
+    .Wraper {
+      @include DFC;
+      align-items: center;
+      gap: 75px;
+      width: auto;
+
+      .TextWrap {
+        @include DFC;
+        @include sc(975px) {
+          br {
+            display: none;
+          }
+        }
+        align-items: left;
+        gap: 15px;
+
+        width: 100%;
+
+        span {
+          color: $seemlessdark;
+        }
+
+        .SubTitle {
+          @include b5;
+        }
+        .Title {
+          @include h2;
+          @include sc(975px) {
+            @include h3;
+          }
+          text-align: left;
+        }
+      }
+      .ItemsWraper {
+        @include DFR;
+        @include sc(975px) {
+          align-items: center;
+          @include DFC;
+          gap: 25px;
+        }
+        align-items: flex-start;
+        gap: 75px;
+
+        .ItemWrap {
+          @include DFC;
+          @include sc(975px) {
+            @include DFR;
+            gap: 45px;
+          }
+          @include sc(445px) {
+            @include DFC;
+            gap: 25px;
+            align-items: flex-start;
+            justify-content: left;
+          }
+          justify-content: left;
+          align-items: flex-start;
+          gap: 25px;
+
+          width: fill-available;
+          width: -webkit-fill-available;
+
+          span {
+            color: $seemlessdark;
+          }
+
+          .content {
+            @include b3;
+          }
+          .title {
+            @include h5;
+            text-align: left;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    @include MCP;
+    @include DFR;
+    @include sc(700px) {
+      @include DFC;
+      gap: 15px;
+    }
+    align-items: flex-start;
+    gap: 125px;
+
+    padding-top: 75px !important;
+    padding-bottom: 75px !important;
+
+    background: $seemlessdark;
+
+    box-shadow: 0px 220px 0 80px black;
+
+    span,
+    li {
+      @include b4;
+      color: $bright;
+
+      opacity: 0.75;
+
+      cursor: pointer;
+    }
+    ul {
+      @include DFC;
+      gap: 7px;
+
+      min-width: fit-content;
+    }
+    .BetaRows {
+      @include DFC;
+      @include sc (700px) {
+        align-items: flex-start;
+      }
+      align-items: flex-end;
+      gap: 25px;
+
+      width: -webkit-fill-available;
+
+      .row {
+        @include DFR;
+        gap: 25px;
+
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .BetaFooter {
+    @include MCP;
+    @include DFR;
+    @include sc(700px) {
+      @include DFC;
+      flex-direction: column-reverse;
+      gap: 15px;
+    }
+    justify-content: space-between;
+
+    min-height: 45px;
+
+    background: $seemlessdark;
+
+
+    span,
+    li {
+      @include b4;
+      color: $bright;
+
+      opacity: 0.75;
+
+      cursor: pointer;
+    }
+    ul {
+      @include DFR;
+      @include sc(700px) {
+        @include DFC;
+        gap: 0;
+justify-content: flex-start;
+align-items: start;
+width: 100%;
+      }
+      gap: 15px;      
+    }
+  }
+}

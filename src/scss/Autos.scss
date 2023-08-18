@@ -1,0 +1,24 @@
+@import "./Funcs.scss";
+@mixin DFR {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+@mixin DFC {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+@mixin MCP {
+    width: auto;
+    padding: 0 calc((100vw - 1275px)/2);
+
+    @include sc(1400px) {
+        padding: 0 45px;
+    }
+    @include sc(575px) {
+        padding: 0 25px;
+    }
+}

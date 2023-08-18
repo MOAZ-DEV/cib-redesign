@@ -1,0 +1,11 @@
+
+@mixin sc ($BP) {
+    @media screen and (max-width: $BP) {
+        @content;
+    }
+}
+@mixin rsc ($BP) {
+    @media screen and (min-width: $BP) {
+        @content;
+    }
+}
